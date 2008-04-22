@@ -12,8 +12,7 @@ Merb::Config.use do |c|
   ### with the cookie session store. If not specified, defaults to '_session_id'.
   # c[:session_id_key] = '_session_id'
   
-  c[:session_secret_key]  = '25cbf852cdc1872cacf2639e7c873d9b1ccfa366'
-  c[:session_store] = 'cookie'
+  c[:session_store] = 'none'
 end  
 
 ### Merb doesn't come with database support by default.  You need
