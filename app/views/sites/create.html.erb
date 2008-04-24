@@ -1,0 +1,15 @@
+<h1>Add a new site</h1>
+
+<%= error_messages_for :site %>
+
+<% form_for :site, :action => "create" do %>
+  <dl class="form">
+    <dt><label for="site_name">Name</label></dt>
+    <dd><%= text_control :name %></dd>
+  </dl>
+  <dl class="form">
+    <dt><label for="site_domain">Domain</label></dt>
+    <dd><%= text_control :domain %></dd>
+  </dl>
+  <div class="actions"><%= submit_button "Save" %></div>
+<% end %>

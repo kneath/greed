@@ -1,0 +1,13 @@
+<h1>Your Sites</h1>
+<% if @sites.empty? %>
+  <p>You haven't added any sites yet.</p>
+<% else %>
+  <ul>
+    <% for site in @sites %>
+      <li><%= link_to site.name, url(:action => "edit", :id => site.id) %></li>
+    <% end %>
+  </ul>
+<% end %>
+<% throw_content :sidebar do %>
+  <p><%= link_to "Add a site", url(:action => "create") %></p>
+<% end %>

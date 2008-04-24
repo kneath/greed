@@ -1,11 +1,30 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
   <head>
-    <title>Fresh Merb App</title>
+    <title><%= page_title %></title>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <link rel="stylesheet" href="/stylesheets/master.css" type="text/css" media="screen" charset="utf-8" />
   </head>
   <body>
-    <%= catch_content :for_layout %>
+    <div id="wrap">
+      <div id="header">
+        <h2 id="logo"><a href="/">Greed</a></h2>
+        <ul id="nav">
+          <li><%= link_to "Dashboard", url(:controller => "dashboard") %></li>
+          <li><%= link_to "Sites", url(:controller => "sites") %></li>
+          <li><%= link_to "Campaigns", url(:controller => "campaigns") %></li>
+          <li><%= link_to "Settings", url(:controller => "settings") %></li>
+        </ul>
+      </div><!-- /#header -->
+      <div id="content" class="columns">
+        <div class="main">
+          <%= catch_content :for_layout %>
+        </div>
+        <div class="sidebar">
+          <%= catch_content :sidebar %>
+        </div>
+      </div>
+      <!-- /#content -->
+    </div>
   </body>
 </html>
