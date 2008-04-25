@@ -12,7 +12,7 @@
         <p class="meta"><%= link_to site.url, site.url %></p>
         <ul class="meta">
           <li><%= link_to "Edit", url(:action => "edit", :id => site.id) %></li>
-          <li>0 / <%= site.spots.count %> spots filled</li>
+          <li><%= site.spots.count %> spots</li>
         </ul>
       </li>
     <% end %>

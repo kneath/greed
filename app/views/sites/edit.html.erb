@@ -20,9 +20,12 @@
 <% if @site.spots.empty? %>
   <p>No spots added for this site.</p>
 <% else %>
-  <ul>
+  <ul class="spots">
     <% for spot in @site.spots %>
-    <li><%=h spot.name %></li>
+    <li>
+      <h4><%=h spot.name %></h4>
+      <p class="meta"><%= spot.campaigns.count %> / <%= spot.campaign_limit %> campaigns filled</p>
+    </li>
     <% end %>
   </ul>
 <% end %>

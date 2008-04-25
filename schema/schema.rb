@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(:version => 4) do
 
   create_table "sites", :force => true do |t|
     t.string   "name"
-    t.string   "domain"
+    t.string   "url"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

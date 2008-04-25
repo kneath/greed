@@ -11,5 +11,9 @@ module Merb
       return out
     end
     
+    def to_percentage(fraction)
+      (fraction*100).to_s + "%"
+    end
+    
   end
 end
