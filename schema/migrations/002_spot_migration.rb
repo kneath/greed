@@ -4,7 +4,6 @@ class SpotMigration < ActiveRecord::Migration
       t.string :name
       t.float :price
       t.string :pricing_type
-      t.string :limit_type
       t.integer :campaign_limit
       t.integer :site_id
       t.timestamps

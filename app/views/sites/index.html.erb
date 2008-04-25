@@ -1,13 +1,36 @@
+<% page_title "Sites" %>
+
 <h1>Your Sites</h1>
+<p>Your sites are the different domains or sections of domains you manage.</p>
 <% if @sites.empty? %>
   <p>You haven't added any sites yet.</p>
 <% else %>
-  <ul>
+  <ul class="sites">
     <% for site in @sites %>
-      <li><%= link_to site.name, url(:action => "edit", :id => site.id) %></li>
+      <li>
+        <h4><%= link_to site.name, url(:action => "edit", :id => site.id) %></h4>
+        <p class="meta"><%= link_to site.url, site.url %></p>
+        <ul class="meta">
+          <li><%= link_to "Edit", url(:action => "edit", :id => site.id) %></li>
+          <li>0 / <%= site.spots.count %> spots filled</li>
+        </ul>
+      </li>
     <% end %>
   </ul>
 <% end %>
-<% throw_content :sidebar do %>
-  <p><%= link_to "Add a site", url(:action => "create") %></p>
-<% end %>
+
+<div class="form">
+  <h2>Add a new site</h2>
+  <%= error_messages_for @site %>
+  <% form_for :site do %>
+    <dl class="form">
+      <dt><label for="site_name">Name</label></dt>
+      <dd><%= text_control :name %></dd>
+    </dl>
+    <dl class="form">
+      <dt><label for="site_url">URL</label></dt>
+      <dd><%= text_control :url %></dd>
+    </dl>
+    <div class="actions"><%= submit_button "Save" %></div>
+  <% end %>
+</div>

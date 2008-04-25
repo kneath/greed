@@ -1,3 +1,5 @@
 .DS_Store
 *.log
 config/database.yml
+db/test.sqlite
+schema/*.sql

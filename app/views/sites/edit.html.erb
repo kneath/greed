@@ -1,0 +1,48 @@
+<h1>Editing <em><%=h @site.name %></em></h1>
+
+<div class="form">
+  <h2>Overview</h2>
+  <%= error_messages_for @site %>
+  <% form_for :site do %>
+    <dl class="form">
+      <dt><label for="site_name">Name</label></dt>
+      <dd><%= text_control :name %></dd>
+    </dl>
+    <dl class="form">
+      <dt><label for="site_url">URL</label></dt>
+      <dd><%= text_control :url %></dd>
+    </dl>
+    <div class="actions"><%= submit_button "Edit site details" %></div>
+  <% end %>
+</div>
+
+<h2>Site Spots</h2>
+<% if @site.spots.empty? %>
+  <p>No spots added for this site.</p>
+<% else %>
+  <ul>
+    <% for spot in @site.spots %>
+    <li><%=h spot.name %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<div class="form">
+  <h2>Add a new spot</h2>
+  <%= error_messages_for @spot %>
+  <% form_for :spot do %>
+    <dl class="form">
+      <dt><label for="spot_name">Name</label></dt>
+      <dd><%= text_control :name %></dd>
+    </dl>
+    <dl class="form">
+      <dt><label>Pricing</label></dt>
+      <dd><%= text_control :price %> <%= select_control :pricing_type, :collection => Spot.pricing_types %></dd>
+    </dl>
+    <dl class="form">
+      <dt><label>Maximum Campaigns</label></dt>
+      <dd><%= text_control :campaign_limit %></dd>
+    </dl>
+    <div class="actions"><%= submit_button "Add Spot" %></div>
+  <% end %>
+</div>
