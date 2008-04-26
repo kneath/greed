@@ -26,4 +26,11 @@ class Campaigns < Application
     render
   end
   
+  def edit
+    @sites = Site.find(:all)
+    @campaign = Campaign.find(params[:id])
+    @site = @campaign.spot.site
+    render
+  end
+  
 end

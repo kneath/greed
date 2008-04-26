@@ -1,0 +1,16 @@
+<dl class="form">
+  <dt><label for="campaign_name">Name</label></dt>
+  <dd><%= text_control :name %></dd>
+</dl>
+<dl class="form">
+  <dt><label for="campaign_spot">For Spot</label></dt>
+  <dd><%= select_control :spot_id, :collection => @site.spots, :text_method => :name, :value_method => :id %></dd>
+</dl>
+<dl class="form">
+  <dt><label>Duration</label></dt>
+  <dd>
+    <input type="text" class="datepicker" update_field="campaign_starts_on" update_text="starts_on_text" /> <input type="text" class="datepicker" update_field="campaign_ends_on" update_text="ends_on_text" />
+    <p class="dateresults"><strong>Start:</strong> <span id="starts_on_text" class="invalid">N/A</span> <strong>End:</strong> <span id="ends_on_text" class="invalid">N/A</span></p>
+    <%= hidden_control :starts_on, :id => "campaign_starts_on" %> <%= hidden_control :ends_on, :id => "campaign_ends_on" %>
+  </dd>
+</dl>

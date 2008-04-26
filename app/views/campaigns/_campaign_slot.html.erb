@@ -1,5 +1,7 @@
-<% if spot.campaign_for(slot_number) %>
+<% if campaign = spot.campaign_for(slot_number) %>
   <p class="status">Slot #<%= slot_number %>: <strong>Active</strong></p>
+  <%= partial :campaign, :campaign => campaign %>
+  <p class="action"><%= link_to "Manage", url(:action => "edit", :id => campaign.id) %></p>
 <% else %>
-  <p class="status">Slot #<%= slot_number %>: <strong>Available</strong> </p>
+  <p class="status available">Slot #<%= slot_number %>: <strong>Available</strong> </p>
 <% end %>

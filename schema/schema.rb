@@ -9,27 +9,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 4) do
-
-  create_table "advertisements", :force => true do |t|
-    t.string   "title"
-    t.text     "description"
-    t.string   "filename"
-    t.string   "content_type"
-    t.integer  "width"
-    t.integer  "height"
-    t.integer  "campaign_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
+ActiveRecord::Schema.define(:version => 3) do
 
   create_table "campaigns", :force => true do |t|
     t.string   "name"
+    t.text     "description"
     t.integer  "weight"
-    t.integer  "impression_limit"
     t.datetime "starts_on"
     t.datetime "ends_on"
     t.boolean  "active"
+    t.string   "filename"
     t.integer  "spot_id"
     t.datetime "created_at"
     t.datetime "updated_at"

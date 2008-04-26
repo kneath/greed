@@ -1,0 +1,10 @@
+<h1>Managing Campaign <em><%=h @campaign.name %></em></h1>
+
+<% form_for :campaign do %>
+  <div class="form">
+    <h2>Edit details</h2>
+    <%= error_messages_for @campaign %>
+    <%= partial :form %>
+    <div class="actions"><%= submit_button "Save" %></div>
+  </div>
+<% end %>
