@@ -42,11 +42,3 @@ describe Sites do
   it "should remove a site"
   
 end
-
-def valid_site_params(options = {})
-  {:name => "Example Site", :url => "http://example.com"}.merge(options)
-end
-
-def valid_spot_params(options = {})
-  {:name => "Example Spot", :price => 50.0, :pricing_type => "Monthly", :campaign_limit => 2}.merge(options)
-end

@@ -1,0 +1,5 @@
+<% if spot.campaign_for(slot_number) %>
+  <p class="status">Slot #<%= slot_number %>: <strong>Active</strong></p>
+<% else %>
+  <p class="status">Slot #<%= slot_number %>: <strong>Available</strong> </p>
+<% end %>

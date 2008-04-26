@@ -7,7 +7,10 @@ class Spot < ActiveRecord::Base
   validates_numericality_of :price
   validates_uniqueness_of :name, :scope => :site_id
   
-  cattr_accessor :pricing_types
-  @@pricing_types = ["CPM", "CPC", "Monthly"]
+  # gets a campaign for a given index and returns false if none exists
+  def campaign_for(index)
+    return false if self.campaigns.count < index
+    return self.campaigns[index - 1]
+  end
   
 end

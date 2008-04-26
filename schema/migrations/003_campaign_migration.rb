@@ -3,9 +3,9 @@ class CampaignMigration < ActiveRecord::Migration
     create_table :campaigns do |t|
       t.string :name
       t.integer :weight
-      t.integer :impression_limit
       t.datetime :starts_on
       t.datetime :ends_on
+      t.boolean :active
       t.integer :spot_id
       t.timestamps
     end 
