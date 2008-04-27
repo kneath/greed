@@ -3,6 +3,7 @@ class CampaignMigration < ActiveRecord::Migration
     create_table :campaigns do |t|
       t.string :name
       t.text :description
+      t.string :link
       t.integer :weight
       t.datetime :starts_on
       t.datetime :ends_on

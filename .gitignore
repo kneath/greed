@@ -3,3 +3,4 @@
 config/database.yml
 db/test.sqlite
 schema/*.sql
+public/advertisements

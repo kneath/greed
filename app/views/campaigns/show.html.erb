@@ -5,7 +5,7 @@
   <p>You haven&rsquo;t defined any advertising spots for this site yet. You can manage the spots available in the sites section or by <%= link_to 'visiting this page', url(:controller => "sites", :action => "edit", :id => @site.id) %>.</p>
 <% else %>
   <% for spot in @site.spots %>
-    <h2>Spot: <em><%=h spot.name %></em></h2>
+    <h2>Right now in spot: <em><%=h spot.name %></em></h2>
     <ul class="spots">
       <% for index in 1..spot.campaign_limit%>
         <li>
@@ -14,7 +14,7 @@
       <% end %>
     </ul>
   <% end %>
-  <% form_for :campaign do %>
+  <% form_for :campaign, :multipart => true do %>
     <div class="form">
       <h2>Add a campaign</h2>
       <%= error_messages_for @campaign %>

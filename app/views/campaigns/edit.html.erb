@@ -1,6 +1,6 @@
 <h1>Managing Campaign <em><%=h @campaign.name %></em></h1>
 
-<% form_for :campaign do %>
+<% form_for :campaign, :multipart => true do %>
   <div class="form">
     <h2>Edit details</h2>
     <%= error_messages_for @campaign %>

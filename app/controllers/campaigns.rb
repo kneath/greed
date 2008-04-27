@@ -19,7 +19,7 @@ class Campaigns < Application
     if request.method == :post or request.method == :put
       @campaign = Campaign.new(params[:campaign].merge({:active => true}))
       if @campaign.save
-        params[:campaign] = nil
+        @campaign = Campaign.new
       end
       @site.reload
     end

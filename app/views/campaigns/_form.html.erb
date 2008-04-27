@@ -3,6 +3,18 @@
   <dd><%= text_control :name %></dd>
 </dl>
 <dl class="form">
+  <dt><label for="campaign_description">Description</label></dt>
+  <dd><%= text_area_control :description %></dd>
+</dl>
+<dl class="form">
+  <dt><label for="campaign_link">Link</label></dt>
+  <dd><%= text_control :link %></dd>
+</dl>
+<dl class="form">
+  <dt><label for="campaign_iuploaded_data">Image</label></dt>
+  <dd><%= file_control :uploaded_data %></dd>
+</dl>
+<dl class="form">
   <dt><label for="campaign_spot">For Spot</label></dt>
   <dd><%= select_control :spot_id, :collection => @site.spots, :text_method => :name, :value_method => :id %></dd>
 </dl>
