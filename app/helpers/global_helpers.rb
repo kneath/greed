@@ -20,5 +20,9 @@ module Merb
       #"http://" + Merb.config[:host] + ":" + Merb.config[:port]
     end
     
+    def format_for_javascript(body)
+      body.gsub(/\'/, "&apos;").gsub(/\n/, "")
+    end
+    
   end
 end

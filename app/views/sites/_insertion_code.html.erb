@@ -1,9 +1,9 @@
 <script type="text/javascript">
   (function(){
-    document.write('<div id="greed_<%= spot.id %>=document"></div>');
+    document.write('<div id="greed_<%= spot.id %>"></div>');
     s<%= spot.id %>=document.createElement('script');
-    s<%= spot.id %>=document.type="text/javascript";
-    s<%= spot.id %>=document.src="<%= "#{host_with_port}/server/spot/#{spot.id}" %>";
+    s<%= spot.id %>.type="text/javascript";
+    s<%= spot.id %>.src="<%= "#{host_with_port}/server/spot/#{spot.id}" %>";
     setTimeout("document.getElementById('greed_<%= spot.id %>').appendChild(s<%= spot.id %>);",1);
   })();
 </script>

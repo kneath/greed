@@ -7,6 +7,10 @@ class Campaign < ActiveRecord::Base
   
   after_save :save_to_storage
   
+  def active?
+    self.active == true
+  end
+  
   # Neccecary method for file_control helper
   def uploaded_data
     return ""
@@ -28,7 +32,7 @@ class Campaign < ActiveRecord::Base
     destination_path = "/advertisements/" + self.id.to_s + extname
     # copy the file over
     FileUtils.mkdir_p(Merb.root / "public" / "advertisements")
-    FileUtils.rm(Merb.root / "public" + self.filename) if File.exists?(Merb.root / "public" + self.filename)
+    FileUtils.rm(Merb.root / "public" + self.filename) if File.exists?(Merb.root / "public" + self.filename) unless self.filename.nil?
     FileUtils.mv(tempfile_path, Merb.root / "public" + destination_path)
     # update the record
     self.filename = destination_path
