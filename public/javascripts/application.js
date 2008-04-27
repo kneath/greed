@@ -37,6 +37,22 @@ var rules = {
 
     // update hidden fields if visual fields have info in them
     element.fireEvent('keyup'); 
+  },
+  
+  '.codetoggler': function(element){
+    element = $(element);
+    toggle_element = $(element.getAttribute('toggle'));
+    toggle_element.hide();
+    element.addEvent('click', function(e){
+      if (toggle_element.visible()){
+        toggle_element.hide();
+        this.innerHTML = 'Show Code';
+      }else{
+        toggle_element.show();
+        this.innerHTML = 'Hide Code';
+      }
+      (new Event(e)).stop();
+    });
   }
 }
 

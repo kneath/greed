@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 3) do
+ActiveRecord::Schema.define(:version => 4) do
 
   create_table "campaigns", :force => true do |t|
     t.string   "name"
@@ -22,6 +22,17 @@ ActiveRecord::Schema.define(:version => 3) do
     t.integer  "spot_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "link"
+    t.integer  "impressions_count", :default => 0
+    t.integer  "clicks_count",      :default => 0
+  end
+
+  create_table "impressions", :force => true do |t|
+    t.string   "ip"
+    t.string   "country"
+    t.boolean  "clicked",     :default => false
+    t.integer  "campaign_id"
+    t.datetime "created_at"
   end
 
   create_table "sites", :force => true do |t|

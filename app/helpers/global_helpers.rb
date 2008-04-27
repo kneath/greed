@@ -15,5 +15,10 @@ module Merb
       (fraction*100).to_s + "%"
     end
     
+    def host_with_port
+      request.protocol + request.host
+      #"http://" + Merb.config[:host] + ":" + Merb.config[:port]
+    end
+    
   end
 end

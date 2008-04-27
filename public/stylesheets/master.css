@@ -190,6 +190,13 @@ input[type=text], input[type=password], textarea{
 input[type=text].datepicker{
   width:100px;
 }
+textarea.code-insertion{
+  width:97%;
+  height:120px;
+  font-family: "Courier New", Courier, monospace;
+  font-size:11px;
+  color:#000;
+}
 
 input[type=submit], button[type=submit]{
   padding:5px 10px;
@@ -285,6 +292,9 @@ ul.meta li a{
 ul.spots{
   margin:15px 0 15px -10px;
 }
+ul.full-width-spots{
+  margin-left:0;
+}
 ul.spots li{
   list-style-type:none;
   float:left;
@@ -298,7 +308,11 @@ ul.spots li{
   -o-border-radius:4px;
   border-radius:4px;
 }
-
+ul.full-width-spots li{
+  float:none;
+  margin-left:0;
+  width:auto;
+}
 .spots p.status{
   margin:5px 0;
   font-size:11px;

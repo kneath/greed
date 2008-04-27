@@ -13,4 +13,9 @@ class Spot < ActiveRecord::Base
     return self.campaigns[index - 1]
   end
   
+  # finds an advertisment with weighting, etc taken into account
+  def campaign_for_serving
+    self.campaigns.first
+  end
+  
 end

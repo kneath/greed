@@ -1,6 +1,7 @@
 class Campaign < ActiveRecord::Base
   
   belongs_to :spot
+  has_many :impressions
   
   validates_presence_of :name, :starts_on, :ends_on, :spot_id
   

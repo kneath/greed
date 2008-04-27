@@ -25,7 +25,7 @@ use_test :rspec
 
 ### Add your other dependencies here
 
-dependencies "merb-assets", "merb_helpers"
+dependencies "merb-assets", "merb_helpers", "geoip"
 
 Merb::BootLoader.after_app_loads do    
   my_formats = {

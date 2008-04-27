@@ -20,11 +20,13 @@
 <% if @site.spots.empty? %>
   <p>No spots added for this site.</p>
 <% else %>
-  <ul class="spots">
+  <ul class="spots full-width-spots">
     <% for spot in @site.spots %>
     <li>
-      <h4><%=h spot.name %></h4>
+      <p class="status"><%=h spot.name %></p>
       <p class="meta"><%= spot.campaigns.count %> / <%= spot.campaign_limit %> campaigns filled</p>
+      <p class="action"><a href="#" class="codetoggler" toggle="code-<%= spot.id %>">Show Code</a></p>
+      <textarea id="code-<%= spot.id %>" class="code-insertion"><%= partial :insertion_code, :spot => spot %></textarea>
     </li>
     <% end %>
   </ul>
