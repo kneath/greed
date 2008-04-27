@@ -30,6 +30,7 @@ class Campaigns < Application
     @sites = Site.find(:all)
     @campaign = Campaign.find(params[:id])
     @site = @campaign.spot.site
+    @campaign.update_attributes(params[:campaign]) if request.method == :post or request.method == :put
     render
   end
   

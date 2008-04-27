@@ -27,6 +27,7 @@ class Campaign < ActiveRecord::Base
     destination_path = "/advertisements/" + self.id.to_s + extname
     # copy the file over
     FileUtils.mkdir_p(Merb.root / "public" / "advertisements")
+    FileUtils.rm(Merb.root / "public" + self.filename) if File.exists?(Merb.root / "public" + self.filename)
     FileUtils.mv(tempfile_path, Merb.root / "public" + destination_path)
     # update the record
     self.filename = destination_path
