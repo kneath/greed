@@ -1,5 +1,5 @@
 (function(){
   var ad_data = '<%= format_for_javascript partial("shared/ad") %>';
-  var ad_spot = document.getElementById('greed_' + <%= @spot.id %>);
+  var ad_spot = document.getElementById('greed_<%= @spot.id %>');
   ad_spot.innerHTML = ad_data;
 })();
