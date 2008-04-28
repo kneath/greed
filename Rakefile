@@ -11,6 +11,13 @@ require 'merb-core'
 require 'rubigen'
 include FileUtils
 
+begin
+  require 'vlad'
+  Vlad.load :scm => "git"
+rescue LoadError
+  # do nothing
+end
+
 # Load the basic runtime dependencies; this will include 
 # any plugins and therefore plugin rake tasks.
 init_env = ENV['MERB_ENV'] || 'rake'

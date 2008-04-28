@@ -1,6 +1,5 @@
 ## Immediate Future
 
-* Track clicks to ads
 * Build out dashboard page
 * Support default campaigns
 * List out inactive / default campaigns
