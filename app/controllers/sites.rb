@@ -22,4 +22,20 @@ class Sites < Application
     render
   end
   
+  def destroy
+    @site = Site.find(params[:id])
+    if request.method == :post
+      @site.destroy
+    end
+    redirect url(:action => "index")
+  end
+  
+  def destroy_spot
+    @spot = Spot.find(params[:id])
+    if request.method == :post
+      @spot.destroy
+    end
+    redirect url(:action => "edit", :id => @spot.site.id)
+  end
+  
 end

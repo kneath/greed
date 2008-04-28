@@ -5,6 +5,9 @@
     <h2>Edit details</h2>
     <%= error_messages_for @campaign %>
     <%= partial :form %>
-    <div class="actions"><%= submit_button "Save" %></div>
+    <div class="actions">
+      <%= submit_button "Save" %>
+    </div>
   </div>
 <% end %>
+<%= destroy_button url(:action => "destroy", :id => @campaign.id), "Remove this campaign" %>

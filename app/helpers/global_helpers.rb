@@ -24,5 +24,9 @@ module Merb
       body.gsub(/\'/, "&apos;").gsub(/\n/, "")
     end
     
+    def destroy_button(url, text)
+      "<form action=\"#{url}\" method=\"post\" class=\"destroy\"><button type=\"submit\" class=\"destroy\">#{text}</button></form>"
+    end
+    
   end
 end

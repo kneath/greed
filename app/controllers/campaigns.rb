@@ -34,4 +34,12 @@ class Campaigns < Application
     render
   end
   
+  def destroy
+    if request.method == :post
+      @campaign = Campaign.find(params[:id])
+      @campaign.destroy
+    end
+    redirect url(:action => "show", :site_id => @campaign.spot.site.id)
+  end
+  
 end

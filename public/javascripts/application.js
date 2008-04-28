@@ -53,6 +53,12 @@ var rules = {
       }
       (new Event(e)).stop();
     });
+  },
+  
+  'form.destroy': function(element){
+    element.onsubmit = function(){
+      return confirm("Are you sure you want to remove this item?")
+    }
   }
 }
 

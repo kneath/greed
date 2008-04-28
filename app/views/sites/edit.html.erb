@@ -15,6 +15,7 @@
     <div class="actions"><%= submit_button "Edit site details" %></div>
   <% end %>
 </div>
+<%= destroy_button url(:action => "destroy", :id => @site.id), "Remove this site" %>
 
 <h2>Site Spots</h2>
 <% if @site.spots.empty? %>
@@ -27,6 +28,7 @@
       <p class="meta"><%= spot.campaigns.count %> / <%= spot.campaign_limit %> campaigns filled</p>
       <p class="action"><a href="#" class="codetoggler" toggle="code-<%= spot.id %>">Show Code</a></p>
       <textarea id="code-<%= spot.id %>" class="code-insertion"><%= partial :insertion_code, :spot => spot %></textarea>
+      <%= destroy_button url(:action => "destroy_spot", :id => spot.id), "Remove" %>
     </li>
     <% end %>
   </ul>
