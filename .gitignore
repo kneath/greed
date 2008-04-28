@@ -2,6 +2,7 @@
 *.log
 *.pid
 config/database.yml
+config/greed.yml
 config/deploy.rb
 db/test.sqlite
 schema/*.sql

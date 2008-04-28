@@ -13,6 +13,7 @@ Merb::Config.use do |c|
   # c[:session_id_key] = '_session_id'
   
   c[:session_store] = 'none'
+  c[:greed] = YAML.load_file(Merb.root / 'config' / 'greed.yml')
 end  
 
 ### Merb doesn't come with database support by default.  You need
