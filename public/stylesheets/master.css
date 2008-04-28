@@ -357,6 +357,6 @@ ul.full-width-spots li{
 .spots button.destroy:hover{
   opacity:1;
 }
-html>body*#wrap button.destroy{
+html>body*#wrap .spots button.destroy{
   top:10px;
 }

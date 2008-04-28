@@ -1,5 +1,15 @@
 (function(){
-  var ad_data = '<%= format_for_javascript partial("shared/ad") %>';
+  var ad_data = '<%= format_for_javascript partial("shared/ad", :campaign => @campaign) %>';
   var ad_spot = document.getElementById('greed_<%= @spot.id %>');
   ad_spot.innerHTML = ad_data;
+  
+  var links = ad_spot.getElementsByTagName('a');
+  for(var i=0; i<links.length; i++){
+    links[i].onclick = function(){
+      var url = this.getAttribute('href');
+      var img = new Image();
+      img.src = "<%= host_with_port %>/server/click/<%= @campaign.id %>";
+      return true;
+    }
+  }
 })();

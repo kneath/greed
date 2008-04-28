@@ -12,8 +12,9 @@ class Server < Merb::Controller
   end
   
   def click
-    @impression = Impression.find(params[:id])
-    @impression.click
+    campaign = Campaign.find(params[:id])
+    impression = campaign.impressions.find(:first, :conditions => ["ip = ?", request.remote_ip], :order => "created_at DESC")
+    impression.click
     return nil
   end
   

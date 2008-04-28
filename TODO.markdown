@@ -14,3 +14,4 @@
 
 * Estimate impression per campaign / spot / site based on historical data
 * Add in calendar-based saturation views
+* Try and serve javascript based ads? (Adsense)
