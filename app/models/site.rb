@@ -14,7 +14,7 @@ class Site < ActiveRecord::Base
   def campaigns_allowed
     ret = 0
     self.spots.each do |spot|
-      ret += spot.campaign_limit
+      ret += (spot.campaign_limit || 0)
     end
     return ret
   end
