@@ -1,5 +1,7 @@
 class Campaigns < Application
   
+  before :authenticate
+  
   def index
     unless cookies[:selected_site_id].nil?
       @site = Site.find(cookies[:selected_site_id])

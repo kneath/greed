@@ -1,5 +1,7 @@
 class Sites < Application
   
+  before :authenticate
+  
   def index
     @sites = Site.find(:all, :order => "created_at DESC")
     @site = Site.new(params[:site])

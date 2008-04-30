@@ -1,7 +1,5 @@
 class Application < Merb::Controller
-  
-  before :authenticate
-  
+    
   def authenticate
     user = Merb::Config[:greed][:authentication][:username]
     password = Merb::Config[:greed][:authentication][:password]
