@@ -1,1 +1,20 @@
-You're in index of the Dashboard
+<h1>Overview</h1>
+
+<h3>Impressions in the past 30 days</h3>
+<p><%= google_bar_graph(@days, :short_date, :impressions) %></p>
+<table>
+  <tr>
+    <th>Date</th>
+    <th>Impressions</th>
+    <th>Clicks</th>
+    <th>CTR</th>
+  </tr>
+  <% for day in @days %>
+  <tr>
+    <td><%= day.date.to_formatted_s(:general) %></td>
+    <td><%= number_with_delimiter day.impressions %></td>
+    <td><%= number_with_delimiter day.clicks %></td>
+    <td><%= ctr(day.clicks, day.impressions) %></td>
+  </tr>
+  <% end %>
+</table>

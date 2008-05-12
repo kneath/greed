@@ -60,6 +60,17 @@ h2 em{
   color:#444;
 }
 
+h3{
+  font-size:14px;
+}
+
+h4{
+  font-size:12px;
+  font-weight:normal;
+  color:#666;
+  text-transform:uppercase;
+}
+
 a{
   color:#0077aa;
   text-decoration:none;
@@ -359,4 +370,30 @@ ul.full-width-spots li{
 }
 html>body*#wrap .spots button.destroy{
   top:10px;
+}
+
+/*------------------------------------------------------------------------------------
+  Tables
+------------------------------------------------------------------------------------*/
+
+table{
+  width:100%;
+  border-spacing:0;
+  border-collapse:collapse;
+  border:1px solid #eee;
+  border-right:none;
+  border-bottom:none;
+}
+
+table th, table td{
+  padding:2px 5px;
+  text-align:left;
+  border:1px solid #eee;
+  border-top:none;
+  border-left:none;
+}
+
+table th{
+  text-transform:uppercase;
+  border-bottom:2px solid #eee;
 }
