@@ -1,7 +1,7 @@
 <h1>Overview</h1>
 
 <h3>Impressions in the past 30 days</h3>
-<p><%= google_bar_graph(@days, :short_date, :impressions) %></p>
+<p><%= google_bar_graph(@days.reverse, :short_date, :impressions) %></p>
 <table>
   <tr>
     <th>Date</th>
