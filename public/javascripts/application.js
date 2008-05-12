@@ -41,7 +41,7 @@ var rules = {
   
   '.codetoggler': function(element){
     element = $(element);
-    toggle_element = $(element.getAttribute('toggle'));
+    var toggle_element = $(element.getAttribute('toggle'));
     toggle_element.hide();
     element.addEvent('click', function(e){
       if (toggle_element.visible()){
