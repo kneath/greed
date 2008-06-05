@@ -1,6 +1,5 @@
 (function(){
-  //var ad_data = '<%= format_for_javascript(partial("shared/ad", :campaign => @campaign, :format => :html)) %>';
-    var ad_data = '<div class="greed_advertisment"><h4><a href="http://lighthouseapp.com">Testing Campaign</a></h4><p>Blahblah blah</p></div>';
+  var ad_data = '<%= format_for_javascript(partial("shared/ad", :campaign => @campaign, :format => :html)) %>';
   var ad_spot = document.getElementById('greed_<%= @spot.id %>');
   ad_spot.innerHTML = ad_data;
   
