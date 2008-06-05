@@ -21,7 +21,7 @@ module Merb
     end
     
     def format_for_javascript(body)
-      body.gsub(/\'/, "&apos;").gsub(/\n/, "").gsub(/\r/, "")
+      body.gsub(/\'/, "&apos;").gsub(/\n/, "").gsub(/\r/, "").gsub(/\t/, "").gsub(/ +/, " ")
     end
     
     def destroy_button(url, text)
