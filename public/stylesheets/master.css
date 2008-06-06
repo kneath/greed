@@ -27,16 +27,7 @@ body{
 
 #wrap{
   margin:0 auto;
-  width:780px;
-}
-
-#content .main{
-  float:left;
   width:580px;
-}
-#content .sidebar{
-  float:right;
-  width:180px;
 }
 
 h1{
