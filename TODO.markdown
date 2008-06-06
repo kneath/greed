@@ -8,6 +8,7 @@
 
 * Fill in pending specs
 * Freeze all neccecary gems
+* Email notifications for campaigns ending
 
 ## Version 1.1
 
