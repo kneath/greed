@@ -303,6 +303,11 @@ ul.meta li a{
   Campaigns
 ------------------------------------------------------------------------------------*/
 
+#site_selector{
+  float:right;
+  margin-top:-24px;
+}
+
 ul.spots{
   margin:15px 0 15px -10px;
 }
