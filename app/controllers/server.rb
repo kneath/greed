@@ -4,6 +4,7 @@ class Server < Merb::Controller
   def spot
     @spot = Spot.find(params[:id])
     @campaign = @spot.campaign_for_serving
+    return render "/* No campaign available */", :layout => false, :format => :js if @campaign.nil?
     render_then_call(render(:layout => false, :format => :js)) do
       geo_ip = GeoIP.new(Merb.root / "data" / "GeoLiteCity.dat")
       geo_ip_data = geo_ip.city(request.remote_ip)
