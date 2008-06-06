@@ -34,6 +34,7 @@ class Campaign < ActiveRecord::Base
     FileUtils.mkdir_p(Merb.root / "public" / "advertisements")
     FileUtils.rm(Merb.root / "public" + self.filename) if File.exists?(Merb.root / "public" + self.filename) unless self.filename.nil?
     FileUtils.mv(tempfile_path, Merb.root / "public" + destination_path)
+    FileUtils.chmod 0666, Merb.root / "public" + destination_path
     # update the record
     self.filename = destination_path
     self.save
