@@ -1,13 +1,13 @@
 <div class="greed_advertisment">
   <% unless campaign.filename.blank? %>
-    <p><a href="<%= campaign.link %>" title="<%= campaign.name %>"><img src="<%= host_with_port + campaign.filename %>" /></a></p>
+    <a href="<%= campaign.link %>" title="<%= campaign.name %>" class="greed_img"><img src="<%= host_with_port + campaign.filename %>" /></a>
     <% unless campaign.description.blank? %>
-      <p><%= campaign.description %></p>
+      <p class="greed_description"><%= campaign.description %></p>
     <% end %>
   <% else %>
-    <h4><a href="<%= campaign.link %>"><%=h campaign.name %></a></h4>
+    <h4 class="greed_title"><a href="<%= campaign.link %>"><%=h campaign.name %></a></h4>
     <% unless campaign.description.blank? %>
-      <p><%= campaign.description %></p>
+      <p class="greed_description"><%= campaign.description %></p>
     <% end %>
   <% end %>
 </div>

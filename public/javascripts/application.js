@@ -28,7 +28,6 @@ var rules = {
     // update visual fields if hidden fields have info in them
     if (element.value == null || element.value == ""){
       var field = $(element.getAttribute('update_field'));
-      console.log(field);
       if (field.value != null && field.value != ""){
         var date = Date.parse(field.value);
         element.value = date.toString("MMMM dd, yyyy");

@@ -23,6 +23,8 @@
   <dd>
     <input type="text" class="datepicker" update_field="campaign_starts_on" update_text="starts_on_text" /> <input type="text" class="datepicker" update_field="campaign_ends_on" update_text="ends_on_text" />
     <p class="dateresults"><strong>Start:</strong> <span id="starts_on_text" class="invalid">N/A</span> <strong>End:</strong> <span id="ends_on_text" class="invalid">N/A</span></p>
-    <%= hidden_control :starts_on, :id => "campaign_starts_on" %> <%= hidden_control :ends_on, :id => "campaign_ends_on" %>
+    <input type="hidden" name="campaign[starts_on]" id="campaign_starts_on" value="<%= control_value(:starts_on).to_date.to_formatted_s(:general) %>" />
+    <input type="hidden" name="campaign[ends_on]" id="campaign_ends_on" value="<%= control_value(:ends_on).to_date.to_formatted_s(:general) %>" />
+
   </dd>
 </dl>
