@@ -2,12 +2,12 @@
   <% unless campaign.filename.blank? %>
     <a href="<%= campaign.link %>" title="<%= campaign.name %>" class="greed_img"><img src="<%= host_with_port + campaign.filename %>" /></a>
     <% unless campaign.description.blank? %>
-      <p class="greed_description"><%= campaign.description %></p>
+      <div class="greed_description"><%= campaign.description %></div>
     <% end %>
   <% else %>
     <h4 class="greed_title"><a href="<%= campaign.link %>"><%=h campaign.name %></a></h4>
     <% unless campaign.description.blank? %>
-      <p class="greed_description"><%= campaign.description %></p>
+      <div class="greed_description"><%= campaign.description %></div>
     <% end %>
   <% end %>
 </div>
