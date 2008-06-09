@@ -16,7 +16,7 @@
 </dl>
 <dl class="form">
   <dt><label for="campaign_spot">For Spot</label></dt>
-  <dd><%= select_control :spot_id, :collection => @site.spots, :text_method => :name, :value_method => :id %></dd>
+  <dd><%= select_control :spot_id, :collection => @site.spots, :text_method => :name, :value_method => :id, :selected => control_value(:spot_id).to_i %></dd>
 </dl>
 <dl class="form">
   <dt><label>Duration</label></dt>
